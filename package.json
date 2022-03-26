@@ -4,7 +4,7 @@
   "description": "throws messages into a specific discord channel when your miners are down",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "dev": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/devdudeio/vrsc-mining-notifyer/issues"
   },
-  "homepage": "https://github.com/devdudeio/vrsc-mining-notifyer#readme"
+  "homepage": "https://github.com/devdudeio/vrsc-mining-notifyer#readme",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "discord.js": "^13.6.0"
+  }
 }

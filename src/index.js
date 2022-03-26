@@ -1,5 +1,4 @@
 const { WebhookClient } = require('discord.js');
-const { prototype } = require('events');
 const axios = require('axios').default;
 
 const envs = {

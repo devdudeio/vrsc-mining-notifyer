@@ -1,0 +1,19 @@
+{
+  "name": "vrsc-mining-notifyer",
+  "version": "1.0.0",
+  "description": "throws messages into a specific discord channel when your miners are down",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devdudeio/vrsc-mining-notifyer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devdudeio/vrsc-mining-notifyer/issues"
+  },
+  "homepage": "https://github.com/devdudeio/vrsc-mining-notifyer#readme"
+}

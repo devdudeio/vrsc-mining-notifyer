@@ -45,7 +45,7 @@ const findDownWorkers = (response) => {
 };
 
 const sendWebhook = async (response) => {
-  const webhookClient = new WebhookClient({ url: `${process.env.DISCORD_WEBHOOK_URL}` });
+  const webhookClient = new WebhookClient({ url: `${process.env[envs.DISCORD_WEBHOOK_URL]}` });
   const downWorkerList = findDownWorkers(response);
   await webhookClient.send({
     embeds: [
@@ -86,7 +86,7 @@ const sendWebhook = async (response) => {
 
 (async () => {
   checkEnvs();
-  const response = await fetchWorkers(`${process.env.ADDRESS}`);
+  const response = await fetchWorkers(`${process.env[envs.ADDRESS]}`);
   const totalDownWorkers = findDownWorkers(response).length;
 
   if (totalDownWorkers > 0) {

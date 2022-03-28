@@ -1,0 +1,3 @@
+apps:
+  - script: src/index.js
+    name: vrsc-mining-notifyer

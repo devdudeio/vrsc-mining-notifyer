@@ -1,0 +1,10 @@
+{
+    "apps": [
+      {
+        "name": "vrsc-mining-notifyer",
+        "script": "src/index.js",
+        "instances": 1,
+        "watch": true
+      }
+    ]
+  }

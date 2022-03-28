@@ -66,7 +66,7 @@ const sendWebhook = async (response) => {
             inline: true,
           },
           {
-            name: 'immmature',
+            name: 'immature',
             value: `${response.immature}`,
             inline: true,
           },

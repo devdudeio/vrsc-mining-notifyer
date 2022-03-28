@@ -1,6 +1,6 @@
 const { WebhookClient } = require('discord.js');
 const axios = require('axios').default;
-const CronJob = require('cron').CronJob;
+const { CronJob } = require('cron');
 
 const envs = {
   DISCORD_WEBHOOK_URL: 'DISCORD_WEBHOOK_URL',
@@ -30,7 +30,7 @@ const fetchWorkers = async (addr) => {
     });
   } catch (error) {
     console.error(error);
-    return {workers: []}
+    return { workers: [] };
   }
 };
 
@@ -84,8 +84,8 @@ const sendWebhook = async (response) => {
     .catch(console.error);
 };
 
-let job = new CronJob('0 */5 * * * *', async () =>  {
-  console.log(new Date())
+const job = new CronJob('0 */5 * * * *', async () => {
+  console.log(new Date());
   checkEnvs();
   const response = await fetchWorkers(`${process.env[envs.ADDRESS]}`);
   const totalDownWorkers = findDownWorkers(response).length;
@@ -93,7 +93,7 @@ let job = new CronJob('0 */5 * * * *', async () =>  {
   if (totalDownWorkers > 0) {
     console.debug(`${new Date()}:`, `looks like there is a problem with ${totalDownWorkers} worker(s)`);
     await sendWebhook(response);
-  }else{
+  } else {
     console.debug(new Date(), 'everything is fine');
   }
 }, null, true, 'Europe/Berlin');

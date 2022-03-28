@@ -4,7 +4,9 @@
   "description": "throws messages into a specific discord channel when your miners are down",
   "main": "src/index.js",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node src/index.js",
+    "lint": "eslint src/index.js",
+    "lint:fix": "eslint src/index.js --fix"
   },
   "repository": {
     "type": "git",
